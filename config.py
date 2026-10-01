@@ -99,10 +99,13 @@ DURATION_LIMIT = time_to_seconds(f"{DURATION_LIMIT_MIN}:00")
 
 # ───── Bot Introduction Messages ───── #
 AYU = [
-    "ꜰɪɴᴅɪɴɢ ʏᴏᴜʀ ᴛᴜɴᴇ, ʙᴀʙʏ... 💞",
-    "ѕᴏɴɢ ʟᴏᴀᴅɪɴɢ ғᴏʀ ᴍʏ ʙᴀʙʏ 💋",
-    "ʏᴏᴜʀ ғᴀᴠᴏʀɪᴛᴇ ᴠɪʙᴇ ɪs ʟᴏᴀᴅɪɴɢ… 🎧",
-    "💞 ғɪɴᴅɪɴɢ ʏᴏᴜʀ ᴀɴɴɪᴇᴍᴜsɪᴄ ᴛᴜɴᴇ... 🎧",
+    '<tg-emoji emoji-id="6136178002943290170">🔍</tg-emoji>',
+    '<tg-emoji emoji-id="6138906561306697574">🔍</tg-emoji>',
+    '<tg-emoji emoji-id="6138842274236210168">🔍</tg-emoji>',
+    '<tg-emoji emoji-id="6136518061273914931">🔍</tg-emoji>',
+    '<tg-emoji emoji-id="6138792280816884735">🔍</tg-emoji>',
+    '<tg-emoji emoji-id="6136530456549531369">🔍</tg-emoji>',
+    '<tg-emoji emoji-id="6136701769910065935">🔍</tg-emoji>',
 ]
 
 AYUV = [
