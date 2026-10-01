@@ -1,0 +1,7 @@
+services:
+  - type: worker
+    name: STRABERRY-bot
+    env: python
+    plan: free
+    buildCommand: pip3 install -r requirements.txt
+    startCommand: python3 -m STRABERRY 
