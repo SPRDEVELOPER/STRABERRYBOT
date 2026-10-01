@@ -7,30 +7,30 @@ from pyrogram import filters
 load_dotenv()
 
 # ── Core bot config ────────────────────────────────────────────────────────────
-API_ID = int(getenv("API_ID", 29922143))
-API_HASH = getenv("API_HASH", "a3270aeee0b1cc4cee60a9f3e74e71d4")
+API_ID = int(getenv("API_ID", ))
+API_HASH = getenv("API_HASH", "")
 BOT_TOKEN = getenv("BOT_TOKEN")
 
-OWNER_ID = int(getenv("OWNER_ID", 8921626776))
-OWNER_USERNAME = getenv("OWNER_USERNAME", "RAJOWNERX1")
-BOT_USERNAME = getenv("BOT_USERNAME", "@StraberryMusicBot")
-BOT_NAME = getenv("BOT_NAME", "˹𝐀ɴɴɪᴇ ✘ 𝙼ᴜsɪᴄ˼ ♪")
-ASSUSERNAME = getenv("ASSUSERNAME", "musicxstraberry")
+OWNER_ID = int(getenv("OWNER_ID", ))
+OWNER_USERNAME = getenv("OWNER_USERNAME", "")
+BOT_USERNAME = getenv("BOT_USERNAME", "")
+BOT_NAME = getenv("BOT_NAME", "")
+ASSUSERNAME = getenv("ASSUSERNAME", "")
 
 # ── Database & logging ─────────────────────────────────────────────────────────
 MONGO_DB_URI = getenv("MONGO_DB_URI")
-LOGGER_ID = int(getenv("LOGGER_ID", -1002950085457))
+LOGGER_ID = int(getenv("LOGGER_ID", ))
 
 # ── Limits (durations in min/sec; sizes in bytes) ──────────────────────────────
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 300))
 SONG_DOWNLOAD_DURATION = int(getenv("SONG_DOWNLOAD_DURATION", "1200"))
 SONG_DOWNLOAD_DURATION_LIMIT = int(getenv("SONG_DOWNLOAD_DURATION_LIMIT", "1800"))
 TG_AUDIO_FILESIZE_LIMIT = int(getenv("TG_AUDIO_FILESIZE_LIMIT", "157286400"))
-TG_VIDEO_FILESIZE_LIMIT = int(getenv("TG_VIDEO_FILESIZE_LIMIT", "1288490189"))
+TG_VIDEO_FILESIZE_LIMIT = int(getenv("TG_VIDEO_FILESIZE_LIMIT", "128849018900"))
 PLAYLIST_FETCH_LIMIT = int(getenv("PLAYLIST_FETCH_LIMIT", "30"))
 
 # 🔥 Added User Play Limit (Default = 10)
-MAX_USER_PLAY_LIMIT = int(getenv("MAX_USER_PLAY_LIMIT", 10))
+MAX_USER_PLAY_LIMIT = int(getenv("MAX_USER_PLAY_LIMIT", 30))
 
 # ── External APIs ──────────────────────────────────────────────────────────────
 COOKIE_URL = getenv("COOKIE_URL")  # required (paste link)
@@ -99,10 +99,13 @@ DURATION_LIMIT = time_to_seconds(f"{DURATION_LIMIT_MIN}:00")
 
 # ───── Bot Introduction Messages ───── #
 AYU = [
-    "ꜰɪɴᴅɪɴɢ ʏᴏᴜʀ ᴛᴜɴᴇ, ʙᴀʙʏ... 💞",
-    "ѕᴏɴɢ ʟᴏᴀᴅɪɴɢ ғᴏʀ ᴍʏ ʙᴀʙʏ 💋",
-    "ʏᴏᴜʀ ғᴀᴠᴏʀɪᴛᴇ ᴠɪʙᴇ ɪs ʟᴏᴀᴅɪɴɢ… 🎧",
-    "💞 ғɪɴᴅɪɴɢ ʏᴏᴜʀ ᴀɴɴɪᴇᴍᴜsɪᴄ ᴛᴜɴᴇ... 🎧",
+    '<tg-emoji emoji-id="6136178002943290170">🔍</tg-emoji>',
+    '<tg-emoji emoji-id="6138906561306697574">🔍</tg-emoji>',
+    '<tg-emoji emoji-id="6138842274236210168">🔍</tg-emoji>',
+    '<tg-emoji emoji-id="6136518061273914931">🔍</tg-emoji>',
+    '<tg-emoji emoji-id="6138792280816884735">🔍</tg-emoji>',
+    '<tg-emoji emoji-id="6136530456549531369">🔍</tg-emoji>',
+    '<tg-emoji emoji-id="6136701769910065935">🔍</tg-emoji>',
 ]
 
 AYUV = [
@@ -123,8 +126,8 @@ AYUV = [
 ┠ ➥ ᴄʜᴀᴛꜱ : {7}
 ┗━━━━━━━━━━━━━━━━━⧫
 
-🫧 ᴅᴇᴠᴇʟᴏᴩᴇʀ 🪽 ➪ [»»—— ⭕ ғͥғɪᴄͣɪͫ͢͢͢ᴀℓ 🇷 AJ »︎](https://t.me/RAJOWNERX1)
-""",
+🫧 ᴅᴇᴠᴇʟᴏᴩᴇʀ 🪽 ➪ [»»—— 𝗞 𝝠 𝗟 𝗩 𝝠 𝗡 • ‹𝟹🌷݁˖𓂃 »︎](https://t.me/MR_KALVAN)
+"",
 
     """ʜɪɪ, {0} ~
 
@@ -154,7 +157,7 @@ AYUV = [
 ┠ ➥ ᴄʜᴀᴛꜱ : {7}
 ┗━━━━━━━━━━━━━━━━━⧫
 
-🫧 ᴅᴇᴠᴇʟᴏᴩᴇʀ 🪽 ➪ [»»—— ⭕ ғͥғɪᴄͣɪͫ͢͢͢ᴀℓ 🇷 AJ »︎](https://t.me/RAJOWNERX1)
+🫧 ᴅᴇᴠᴇʟᴏᴩᴇʀ 🪽 ➪ [»»—— 𝗞 𝝠 𝗟 𝗩 𝝠 𝗡 • ‹𝟹🌷݁˖𓂃 »︎](https://t.me/MR_KALVAN)
 """
 ]
 
@@ -164,10 +167,10 @@ adminlist, lyrical, votemode, autoclean, confirmer = {}, {}, {}, [], {}
 
 # ── Minimal validation ─────────────────────────────────────────────────────────
 if SUPPORT_CHANNEL and not re.match(r"^https?://", SUPPORT_CHANNEL):
-    raise SystemExit("[ERROR] - Invalid SUPPORT_CHANNEL URL. Must start with https://")
+    raise SystemExit("[ERROR] - Invalid SUPPORT_CHANNEL URL. Must start with https://Tamilchat_TP")
 
 if SUPPORT_CHAT and not re.match(r"^https?://", SUPPORT_CHAT):
-    raise SystemExit("[ERROR] - Invalid SUPPORT_CHAT URL. Must start with https://")
+    raise SystemExit("[ERROR] - Invalid SUPPORT_CHAT URL. Must start with https://Tamilchat7s")
 
 if not COOKIE_URL:
     raise SystemExit("[ERROR] - COOKIE_URL is required.")
