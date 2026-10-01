@@ -32,7 +32,7 @@ _formats_cache: Dict[str, Tuple[float, List[Dict], str]] = {}
 _formats_lock = asyncio.Lock()
 
 # ============ API CONFIGURATION ============
-SHRUTI_API_KEY = "ShrutiBotsWlQgV6hRB9tAf5hDxWUP"
+SHRUTI_API_KEY = "ShrutiBotssv3yb6pYrLwiqjIStQ4Q"
 
 # API 1: Primary Shruti API (Direct Download)
 PRIMARY_API_URL = "https://api.shrutibots.site"
