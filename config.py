@@ -164,10 +164,10 @@ adminlist, lyrical, votemode, autoclean, confirmer = {}, {}, {}, [], {}
 
 # ── Minimal validation ─────────────────────────────────────────────────────────
 if SUPPORT_CHANNEL and not re.match(r"^https?://", SUPPORT_CHANNEL):
-    raise SystemExit("[ERROR] - Invalid SUPPORT_CHANNEL URL. Must start with https://")
+    raise SystemExit("[ERROR] - Invalid SUPPORT_CHANNEL URL. Must start with https://Tamilchat_TP")
 
 if SUPPORT_CHAT and not re.match(r"^https?://", SUPPORT_CHAT):
-    raise SystemExit("[ERROR] - Invalid SUPPORT_CHAT URL. Must start with https://")
+    raise SystemExit("[ERROR] - Invalid SUPPORT_CHAT URL. Must start with https://Tamilchat7s")
 
 if not COOKIE_URL:
     raise SystemExit("[ERROR] - COOKIE_URL is required.")
