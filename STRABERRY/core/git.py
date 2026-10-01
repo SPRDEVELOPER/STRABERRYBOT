@@ -81,9 +81,10 @@ def git():
         except BaseException:
             pass
         nrs = repo.remote("origin")
-        nrs.fetch(config.UPSTREAM_BRANCH)
+        # Fetch the branch that actually exists on the upstream remote.
+        nrs.fetch(branch)
         try:
-            nrs.pull(config.UPSTREAM_BRANCH)
+            nrs.pull(branch)
         except GitCommandError:
             repo.git.reset("--hard", "FETCH_HEAD")
         install_req("pip3 install --no-cache-dir -r requirements.txt")
