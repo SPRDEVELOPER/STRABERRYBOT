@@ -49,14 +49,33 @@ def git():
         else:
             origin = repo.create_remote("origin", UPSTREAM_REPO)
         origin.fetch()
-        repo.create_head(
-            config.UPSTREAM_BRANCH,
-            origin.refs[config.UPSTREAM_BRANCH],
-        )
-        repo.heads[config.UPSTREAM_BRANCH].set_tracking_branch(
-            origin.refs[config.UPSTREAM_BRANCH]
-        )
-        repo.heads[config.UPSTREAM_BRANCH].checkout(True)
+
+        # Resolve the configured upstream branch safely.
+        # Some repositories use 'main' while older ones use 'master'.
+        branch = config.UPSTREAM_BRANCH
+        remote_ref = None
+        for candidate in (branch, "main", "master"):
+            try:
+                remote_ref = origin.refs[candidate]
+                branch = candidate
+                break
+            except (IndexError, AttributeError):
+                continue
+
+        if remote_ref is None:
+            available = [ref.name for ref in origin.refs]
+            raise RuntimeError(
+                f"Upstream branch '{config.UPSTREAM_BRANCH}' was not found. "
+                f"Available origin refs: {available}"
+            )
+
+        if branch in repo.heads:
+            repo.heads[branch].set_tracking_branch(remote_ref)
+            repo.heads[branch].checkout(True)
+        else:
+            repo.create_head(branch, remote_ref)
+            repo.heads[branch].set_tracking_branch(remote_ref)
+            repo.heads[branch].checkout(True)
         try:
             repo.create_remote("origin", config.UPSTREAM_REPO)
         except BaseException:
